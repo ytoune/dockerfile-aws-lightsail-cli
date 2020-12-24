@@ -1,6 +1,6 @@
 FROM docker
 
-RUN apk --update --no-cache add binutils curl \
+RUN apk --update --no-cache add binutils curl nodejs \
  && curl -sL https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub \
  && curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.32-r0/glibc-2.32-r0.apk \
  && curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.32-r0/glibc-bin-2.32-r0.apk \
