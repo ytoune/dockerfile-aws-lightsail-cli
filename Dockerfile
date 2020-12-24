@@ -7,4 +7,4 @@ RUN curl "https://s3.us-west-2.amazonaws.com/lightsailctl/latest/linux-amd64/lig
 
 WORKDIR /app
 
-ENTRYPOINT [ "sh", "-c" ]
+ENTRYPOINT [ "/usr/bin/bash", "-l" ]
