@@ -3,6 +3,9 @@
 An image that allows you to do "aws lightsail push-container-image".
 The above command probably requires docker.
 
+ytoune/aws-lightsail-cli has awscli, lightsailctl and docker.
+And have nodejs for convenience. (don't have npm or yarn)
+
 # usage
 
 ```shell
