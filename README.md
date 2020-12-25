@@ -19,8 +19,7 @@ services:
 app-deploy:
   image: ytoune/aws-lightsail-cli
   script:
-    - echo start
-    - sh ./deploy.shmkdir ~/.aws || echo pass
+    - mkdir ~/.aws || echo pass
     - echo '[default]' >| ~/.aws/credentials
     - echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
     - echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
