@@ -3,7 +3,6 @@
 An image that allows you to do "aws lightsail push-container-image".
 The above command probably requires docker.
 
-
 # usage
 
 ```shell
