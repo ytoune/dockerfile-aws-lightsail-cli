@@ -19,6 +19,7 @@ services:
 app-deploy:
   image: ytoune/aws-lightsail-cli
   script:
+    # It seems that it doesn't use $AWS_ACCESS_KEY_ID and $AWS_SECRET_ACCESS_KEY, so I'm generating ~/.aws/credentials
     - mkdir ~/.aws || echo pass
     - echo '[default]' >| ~/.aws/credentials
     - echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
@@ -26,7 +27,9 @@ app-deploy:
     - echo '[default]' >| ~/.aws/config
     - echo 'region=ap-northeast-1' >> ~/.aws/config
     - echo 'output=json' >> ~/.aws/config
+    # build
     - docker build -t myapp .
+    # push
     - aws lightsail push-container-image --region ap-northeast-1 --service-name ${APP_SERVICE_NAME} --label api --image myapp
   only:
     - main
